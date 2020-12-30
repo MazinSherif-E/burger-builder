@@ -1,0 +1,171 @@
+.ContactData{
+    background-image: linear-gradient(to right, $color-9, $color-9);
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 50vw 1fr;
+    position: relative;
+
+    &__img{
+        width: 7rem;
+        height: 5rem;
+        margin: .3rem;
+        background-color: white;    
+        border-radius: 1rem;
+        padding: .7rem;     
+        @include respond(tab-port){
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__navigation {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include respond(tab-port){
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__container{
+        grid-column: 2 / 3;
+        grid-row: 1 / -1;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(  
+        to right bottom,  
+        rgba(#fff  ,0) , 
+        rgba(#fff,0) ) , 
+        url(./background.jpg) ;
+        background-size: cover;
+
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        @include respond(tab-port){
+            grid-column: 1 / -1;
+        }
+    }
+
+    &__form {
+        margin-top: 8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-self: center;
+        align-self: center;
+        padding: 2rem;
+        color: $color-9;
+        font-size: 3rem;
+        margin-bottom: -5rem;
+    }
+
+    &__formGroup {
+        width: 40vw ;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        display: block;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        color: balck;
+        transition: all .3s;
+        margin-bottom: 2rem;
+    }
+
+    &__option {
+        background-color: rgba($color-9, .7);
+        color: #fff;
+        border: none;
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    &__input {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        color: #fff;
+        width: 100%;
+        border-radius: 3px;
+        background-color: rgba($color-9, .45);
+        border: none;
+        font-weight: 700;
+        border-bottom: 3px solid transparent;
+        display: block;
+        transition: all .3s;
+        
+
+        @include respond(phone){
+            width: 100%;
+        }
+
+        &:focus{
+            outline: none;
+            color: $color-9;
+            background-color: #fff;
+            box-shadow: 0 1rem 2rem rgba(black, .1);
+            &::-webkit-input-placeholder{
+                color: rgb(170, 167, 167);
+            }
+        &:invalid{
+            border-bottom: 3px solid rgb(255, 3, 3);
+        }
+        
+        }
+
+        &::-webkit-input-placeholder{
+            color: white;
+        }
+    }
+
+    &__input:placeholder-shown + &__label{ 
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-3rem);
+    }
+}
+
+.order__button{
+    font-size: 3rem;
+    background-color: $color-9;
+    color: #fff;
+    padding: 1.5rem 4rem;
+    justify-self: flex-end;
+    margin: 2rem;
+    border: none;
+    border-radius: .5rem;
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgba($color-9, .5);
+    }
+    &:focus{
+        outline: none;
+    }
+    &:disabled {
+        @include disabledBTN;
+    }
+}
+
+.invalid {
+    &:focus{
+        border-bottom: 3px solid rgb(255, 3, 3);
+    }
+}   
+
+.valid{
+    &:focus{
+    border-bottom: 3px solid #02be41;
+    }
+}

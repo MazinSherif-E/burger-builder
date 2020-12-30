@@ -1,0 +1,17 @@
+.error {
+    position: fixed;
+    padding: 0;
+    font-size: 4rem;
+    font-weight: 700;
+    z-index: 10000;
+    background-color: rgba( grey, 0.5);
+    height: 100%;
+    width: 100%;
+
+    &__message {
+        text-decoration: none;
+        background-color: #fff;
+        padding: 1rem;
+        border: 1px solid #fff;
+    }  
+}

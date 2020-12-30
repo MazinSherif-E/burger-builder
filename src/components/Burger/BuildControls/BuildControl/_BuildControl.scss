@@ -1,0 +1,26 @@
+.BuildControl {
+    grid-column: burger-start 1 / burger-end 4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 10rem);
+    justify-content: center;
+    align-items: end;
+    padding: .5rem;    
+
+    
+
+    &__Label {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    &__More {
+        @include button;
+        background-color: $color-2;
+    }
+
+    &__Less {
+        @include button;
+        background-color: $color-3;
+    }
+}   

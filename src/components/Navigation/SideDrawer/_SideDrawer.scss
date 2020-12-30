@@ -1,0 +1,81 @@
+.sideDrawer {
+    background-color: $color-hover;
+    display: none;
+    visibility: hidden;
+    grid-column: sidebar-start / burger-end 4;
+    grid-row: 1 / 4;
+    position: relative;
+    z-index: 1000;
+    padding: 3.2rem 1.6rem;
+    box-sizing: border-box;
+    transition: all .5s ease-out;
+    
+    &__open {
+        transform: translateX(0);
+    }
+
+    &__close {
+        transform: translateX(-100rem);
+    }
+
+    &__img {
+        height: 5rem;
+        width: 8rem;
+        margin: 3rem;
+    }
+
+    &__X{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 3.5rem;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        transition: all .2s;
+        border:  none;
+        background-color: inherit;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+}
+
+    @include respond(phone){
+        display: block;
+        visibility: visible;
+    }
+}
+
+
+.sidebar {
+    cursor: pointer;
+}
+
+.nav_btn {
+    border: none;
+    height: 2px;
+    width: 4.5rem;
+    background-color: white;
+    margin: 3rem;
+    display: none;
+    visibility: hidden;
+
+    &::after,
+    &::before {
+        content: "";
+        border: none;
+        display: block;
+        width: 4.5rem;
+        background-color: white;
+    }
+    
+    &::after {transform: translateY(1.3rem); height: 3px;}
+    &::before {transform: translateY(-1.5rem); height: 2px;}
+
+    @include respond(phone){
+        display: block;
+        visibility: visible;
+    }
+}

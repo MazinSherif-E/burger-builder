@@ -1,0 +1,29 @@
+.navItem {
+    &__link {
+        &,
+        &:link {
+            
+            font-size: 1.6rem;
+            text-decoration: none;
+            padding: 1.6rem 2rem;
+            color: #fff;
+            cursor: pointer;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            display: flex;
+            align-self: stretch;
+
+            @include respond(phone){
+                 margin-bottom: 3rem;
+            }
+        }
+       &:hover,
+       &:active,
+       &Active {
+       
+            background-color: $color-hover;
+            border-bottom: 4px solid $border;
+       } 
+    }
+}

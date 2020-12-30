@@ -1,0 +1,36 @@
+.toolbar { 
+    box-sizing: border-box;
+    background-color: $color-9; 
+    display: block;
+    position: relative;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include respond(phone){
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__logo {
+        height: 4.5rem;
+        background-color: #fff;
+        margin: 1rem;
+        border-radius: 3px;
+    }
+
+    &__img {
+        height: 100%;
+        padding: .5rem;
+    }
+    
+}
+
+.navi{
+    @include respond(phone){
+        display: none;
+        visibility: hidden;
+    }
+}

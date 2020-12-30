@@ -1,0 +1,141 @@
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color:  rgba(black, 0.5) ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all .3s;
+    
+    &__content {
+        background-color:rgba(255, 255, 255, 0.979);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 65%;
+        border-radius: 10px;
+        overflow: hidden;
+        animation: modell .4s ;
+    }  
+
+    &__close{
+            position: absolute;
+            top: 1rem;
+            right: 2.5rem;
+            font-size: 3.5rem;
+            color: $color-5;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            border:  none;
+            background-color: inherit;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+    }
+
+    &__rigthSide {
+        width: 40%;
+        float: left;
+        @include respond(tab-port){
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__photo {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        @include respond(tab-port){
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__leftSide {
+        padding: 2rem;
+        width: 60%;
+        float: left;
+        display: flex;
+        flex-direction: column;
+        @include respond(tab-port){
+            width: 100%;
+        }
+    }
+
+    &__heading{
+        text-align: center;
+        font-family: 'Anton', sans-serif;
+        font-size: 4rem;
+        margin: 1.5rem;
+        color: $color-2;
+    }
+
+    &__subheading {
+        font-family: 'Syne Mono', monospace;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    &__list {
+        list-style: none;
+        margin:3rem 0;
+        padding: 1rem;
+        border-top: $border-bottom;
+        border-bottom: $border-bottom;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__items{
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+    &__continue {
+    align-self: center;
+    justify-self: center;
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
+    border-radius: 30rem;
+    transition: all .3s;
+    cursor: pointer;
+    border: 1px solid $color-5;
+    color: #fff;
+    background-image: linear-gradient(to right, $color-2, $color-3 );   
+
+    &:hover {
+        background-image: linear-gradient(to left, $color-2, $color-3 );   
+        transform: translateY(-1rem);
+
+    }
+    &:focus {
+        outline: none;
+    }
+    }
+
+}
+
+@keyframes modell {
+    0% {
+        opacity: 0;
+        
+    }
+
+    50% {
+        opacity: .5;
+        
+    }
+
+    100% {
+        opacity: 1;
+        
+    }
+}
+

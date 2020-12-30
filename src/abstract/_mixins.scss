@@ -1,0 +1,56 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };     //600px
+    }
+    
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+ 
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };        //1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };     //1800
+    }
+}
+
+
+@mixin disabledBTN {
+    background-color: #C7C6C6;
+    color: #8888;
+    cursor: not-allowed;
+    border: 1px solid $color-7 ;   
+    &:hover {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@mixin button {
+    border: $color-4 1px solid;
+    color: $color-white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: inline-block;
+    padding: .5rem;
+    margin: .5rem;
+    text-decoration: none;
+    transition: all .2s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        transform: translateY(-3px) scale(1.1);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:disabled {
+        @include disabledBTN;
+    }
+}

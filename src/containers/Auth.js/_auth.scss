@@ -1,0 +1,53 @@
+.auth{
+
+    &__flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__content{
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid #eee;
+    box-sizing: border-box;
+    box-shadow: 0 3rem 4rem rgba(black, .2);
+    width: 45%;
+    margin: 3rem 0;
+    @include respond(tab-port){
+        width: 70%;
+        margin-top: 10%;
+    }
+    }
+
+    &__submit{
+        text-decoration: none;
+        font-size: 2rem;  
+        color: rgb(133, 1, 1);
+        font-weight: 700;
+        margin: 2rem 0;
+        }
+
+    &__sign{
+        text-decoration: none;
+        font-size: 2rem;  
+        color: green;
+        font-weight: 700;
+        margin: -1rem 0 1rem 0;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }   
+}
+
+.Message {
+    display: flex;
+    align-self: center;
+    font-size: 2rem;
+    margin: 1rem 0 -5rem 0;
+    color: red;
+    font-weight: 700;
+}
