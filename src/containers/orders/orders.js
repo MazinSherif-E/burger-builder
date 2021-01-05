@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from '../../convertion/App.css';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar'
 import Order from '../../components/order/order';
@@ -7,17 +7,24 @@ import axios from '../../axio-orders';
 import { connect } from 'react-redux';
 import * as indexActions from '../../store/actions/index';
 import { Redirect } from 'react-router-dom';
+import SideBar from '../../components/Navigation/SideDrawer/SideDrawer';
+import Layout from '../../components/Layout/Layout';
 
 const orders = props => {
-
+    const [sideDrawer, setSideDrawer] = useState(false);
     useEffect(()=>{
         props.onFetchOrders()
     }, [])
+    
+    const showSideDrawer = () =>{
+            setSideDrawer(!sideDrawer)
+    }
+
 
     let orders=<Redirect to="/"/>
     if(props.ings){
         orders=(
-        <div className={classes.orders}>
+        <div className={classes.orders__content}>
             {props.orders.map(order =>(
                 <Order 
                     ingredients={order.ingredients}
@@ -28,10 +35,13 @@ const orders = props => {
         </div>)
         }
         return (
-            <React.Fragment>
-                <Toolbar auth={props.isAuthenticated}/>
+            <div className={classes.orders}>
+                <Layout open={showSideDrawer} />
+                <SideBar 
+                    click={showSideDrawer}
+                    show={sideDrawer}/>
                 {orders}
-            </React.Fragment>
+            </div >
         )
     
 }

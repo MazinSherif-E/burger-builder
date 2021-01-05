@@ -22,6 +22,10 @@
         height: 5rem;
         width: 8rem;
         margin: 3rem;
+        @include respond(tab-port){
+            height: 8rem;
+            width: 11rem;
+        }
     }
 
     &__X{
@@ -42,7 +46,7 @@
         }
 }
 
-    @include respond(phone){
+    @include respond(tab-port){
         display: block;
         visibility: visible;
     }
@@ -61,6 +65,7 @@
     margin: 3rem;
     display: none;
     visibility: hidden;
+    cursor: pointer;
 
     &::after,
     &::before {
@@ -74,7 +79,7 @@
     &::after {transform: translateY(1.3rem); height: 3px;}
     &::before {transform: translateY(-1.5rem); height: 2px;}
 
-    @include respond(phone){
+    @include respond(tab-port){
         display: block;
         visibility: visible;
     }

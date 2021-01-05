@@ -16,5 +16,9 @@
 
     @include respond(tab-port){
         grid-column: full-start / full-end ; 
+        height: 80rem;
+        &__add{
+            font-size: 3.5rem; 
+        } 
     }
 }   

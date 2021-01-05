@@ -30,13 +30,23 @@
 @mixin button {
     border: $color-4 1px solid;
     color: $color-white;
-    font-size: 1.8rem;
+    font-size: 2rem;
     cursor: pointer;
     display: inline-block;
     padding: .5rem;
     margin: .5rem;
     text-decoration: none;
     transition: all .2s;
+
+    @include respond(tab-port){
+        padding: 2rem 2.5rem;
+        margin:1.5rem .5rem;
+        font-size: 4rem;
+    }
+    @include respond(phone){
+        grid-column: 2 / 3;
+        font-size: 4rem;
+    }
 
     &:focus {
         outline: none;

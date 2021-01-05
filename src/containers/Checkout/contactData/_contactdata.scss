@@ -5,11 +5,15 @@
     grid-template-columns: 1fr 50vw 1fr;
     position: relative;
 
+    @include respond(tab-port){
+        grid-template-rows: 110vh;
+    }
+
     &__img{
         width: 7rem;
         height: 5rem;
         margin: .3rem;
-        background-color: white;    
+        background-color: white; 
         border-radius: 1rem;
         padding: .7rem;     
         @include respond(tab-port){
@@ -45,6 +49,23 @@
         @include respond(tab-port){
             grid-column: 1 / -1;
         }
+        @include respond(tab-port){
+            background-image: linear-gradient(  
+            to right bottom,  
+            rgba(#fff  ,0) , 
+            rgba(#fff,0) ) , 
+            url(./backgroundPhone.png) ;
+            height: 165vh;
+        }
+
+        @include respond(phone){
+            background-image: linear-gradient(  
+            to right bottom,  
+            rgba(#fff  ,0) , 
+            rgba(#fff,0) ) , 
+            url(./backgroundPhone.png) ;
+            height: 100vh;
+        }
     }
 
     &__form {
@@ -52,6 +73,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    
     }
 
     &__heading {
@@ -63,12 +85,21 @@
         color: $color-9;
         font-size: 3rem;
         margin-bottom: -5rem;
+        @include respond(tab-port){
+            font-size: 5rem;
+            padding: 10rem 0;
+        }
     }
 
     &__formGroup {
         width: 40vw ;
         display: flex;
         flex-direction: column;
+        
+        @include respond(tab-port){
+            width: 70vw;
+            margin: 1rem;
+        }
     }
 
     &__label {
@@ -103,10 +134,9 @@
         border-bottom: 3px solid transparent;
         display: block;
         transition: all .3s;
-        
 
-        @include respond(phone){
-            width: 100%;
+        @include respond(tab-port){
+           font-size: 3rem;
         }
 
         &:focus{
@@ -146,6 +176,10 @@
     border-radius: .5rem;
     transition: all .3s;
     cursor: pointer;
+
+    @include respond(tab-port){
+        font-size: 6.5rem;
+    }
 
     &:hover{
         background-color: rgba($color-9, .5);

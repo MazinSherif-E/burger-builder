@@ -1,7 +1,6 @@
 .order {
     font-size: 2rem;
-    width: 70%;
-    height: 10%;
+    width: 90%;
     border: 1px solid #eee;
     box-shadow: 0 3rem 3rem rgba(black, .3);
     display: flex;
@@ -11,4 +10,28 @@
     padding: 3rem;
     margin: 2rem;
     line-height: 4rem;
+
+    &__ingredients{
+        display: flex;
+        justify-content: space-between;
+        text-transform: capitalize; 
+        display: inline-block;
+        margin: 0 8px;
+        border: 1px solid #ccc;
+        padding: 1px 10px;
+        border-radius: 10px;
+        
+        @include respond(phone){
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 8rem;
+            text-align: center;
+        }
+    }
+    &__para, &__price{
+        @include respond(phone){
+            font-size: 3rem;
+        }
+    }
 } 

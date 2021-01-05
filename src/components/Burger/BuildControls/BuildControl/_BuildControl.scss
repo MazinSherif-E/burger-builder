@@ -1,26 +1,47 @@
 .BuildControl {
-    grid-column: burger-start 1 / burger-end 4;
+    &__ings{
+        display: grid;
+        grid-template-columns: repeat(3, 8rem);
+        justify-items: center;
+        align-items: center;
 
-    display: grid;
-    grid-template-columns: repeat(3, 10rem);
-    justify-content: center;
-    align-items: end;
-    padding: .5rem;    
+        @include respond(tab-port){
+            grid-column-gap: 10rem;
+        }
 
-    
+        @include respond(phone){
+            grid-column-gap: 10rem;
+        }
+    }
 
     &__Label {
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 700;
+        justify-content: center;
+        @include respond(tab-port){
+            font-size: 3.5rem;
+        }
+
+        @include respond(phone){
+            grid-column: 1 / 2;
+            font-size: 3.5rem;
+        }
     }
 
     &__More {
+        justify-content: center;
         @include button;
         background-color: $color-2;
+            @include respond(phone){
+                grid-column: 3 / 4;
+            }
     }
 
     &__Less {
         @include button;
         background-color: $color-3;
+        @include respond(phone){
+            grid-column: 2 / 3 ;
+        }
     }
 }   

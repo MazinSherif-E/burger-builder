@@ -9,7 +9,11 @@
     background-image: linear-gradient(to right, rgba($color-white, .6), rgba($color-white, .6)), url(./burger-1502451_1920.jpg);
 
     @include respond(tab-port){
-        grid-template-rows: min-content min-content minmax(min-content, 1fr)
+        grid-template-rows: min-content minmax(min-content, 60vh) minmax(80rem, 1fr)
+    }
+
+    @include respond(phone){
+        grid-template-rows: min-content minmax(min-content, 60vh) minmax(85rem, 1fr)
     }
 
     &__fork {
@@ -74,8 +78,11 @@
     &:not(:disabled) {
         animation: enable .3s linear;
 }
+    @include respond(tab-port){
+        font-size: 3rem;
+    }
     @include respond(phone){
-        padding: 1.5rem 2rem;
-        margin: 1rem;
+        padding: 1.5rem 4rem;
+        font-size: 4rem;
     }
 }

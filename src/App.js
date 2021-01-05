@@ -21,8 +21,8 @@ const app = props => {
     return (
       <div className={classes.main}>
         <Switch>
-          <Route path="/contactdata" render={ (props) => (<Suspense fallback={<Spinner/>}> <ContactData {...props}/> </Suspense>)}/>
           <Route path="/orders" render={ (props) => (<Suspense fallback={<Spinner/>}> <Orders {...props}/> </Suspense>)}/>
+          <Route path="/contactdata" render={ (props) => (<Suspense fallback={<Spinner/>}> <ContactData {...props}/> </Suspense>)}/>
           <Route path="/" exact render={ (props) => (<Suspense fallback={<Spinner/>}> <BurgerBuilder {...props}/> </Suspense>)}/>
           <Route path="/auth" exact render={ (props) => (<Suspense fallback={<Spinner/>}> <Auth {...props}/> </Suspense>)}/>
           <Route path="/logout" exact render={ (props) => (<Suspense fallback={<Spinner/>}> <Logout {...props}/> </Suspense>)}/>

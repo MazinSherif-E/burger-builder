@@ -18,7 +18,7 @@ const checkout = props => {
                     <div className={classes.checkout__burger}>
                         {burger}
                     </div> 
-                    <Link to="/" className={classes.checkout__ok} >OK!</Link>
+                    <Link to="/orders" className={classes.checkout__ok} >OK!</Link>
                 </div>
             </div>
         )/*onClick={submit}*/ 

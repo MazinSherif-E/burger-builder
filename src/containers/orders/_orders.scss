@@ -1,6 +1,17 @@
 .orders {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: [full-start] min-content 100vh [ful-end]; 
+    grid-template-columns: [full-start sidebar-start] 26rem 
+    [sidebar-end] 
+    1fr [col-start] 
+     repeat(8, [burger-start] minmax(min-content, 14rem) [burger-end]) 
+    26rem [col-end] 
+    1fr [last-col full-end];;
+
+    &__content{
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        justify-self: center;
+        margin-top: 1rem;
+    }
 }

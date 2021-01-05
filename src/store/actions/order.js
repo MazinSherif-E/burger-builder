@@ -59,24 +59,17 @@ export const fetchOrderSucces = ()=>{
     return dispatch=>{
         axios.get('/orders.json' )
             .then(res=>{
-                const fetchOrders = [];
+                const fetchOorders = [];
                 for(let key in res.data){
-                    fetchOrders.push({
+                    fetchOorders.push({
                         ...res.data[key],
                         id: key
                     })
                 }
-                dispatch(fetchOrders(fetchOrders))
+                dispatch(fetchOrders(fetchOorders))
             })
             .catch(err=>{
                 dispatch(fetchOrdersFail(err))
             })
-    }
-}
-
-export const delete_order=(orderId)=>{
-    return{
-        type:actionTypes.DELETE_ORDER,
-        orderId:orderId
     }
 }
