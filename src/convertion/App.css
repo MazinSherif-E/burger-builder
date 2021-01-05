@@ -458,6 +458,11 @@ body {
     border-bottom: 1px solid #AA6817;
     display: flex;
     justify-content: space-between; }
+    @media only screen and (max-width: 37.5em) {
+      .modal__list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
   .modal__items {
     display: flex;
     align-items: center;
